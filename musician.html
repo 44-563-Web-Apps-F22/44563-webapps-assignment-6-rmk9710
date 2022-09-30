@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <header>
+    Musician guess by Reece
+ </header>
+ <title>musician-guess</title>
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="musician_name">Enter the Musician Name </label>
+    <input type ="password" initial id="musician_name" name="form-musician-name" value="John Lennon"> <br>
+
+    <label for="musician-guess">Guess the Musician </label>
+    <input type ="text" id="musician-guess" name="form1-musician-guess" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+var correct = 0
+var wrong = 0
+function checkGuess(){
+    console.log("Getting form values")
+    password = document.getElementById("musician_name").value
+    guess = document.getElementById("musician-guess").value
+    
+    if(password == guess){
+        correct +=1
+        alert("You got it right")
+    } else {
+        wrong +=1
+        alert("Wrong Musician")
+    }
+    document.getElementById("result").innerHTML = "right guesses"+correct+"wrong guesses"+wrong
+}
+</script>
+
+</body>
+</html> 

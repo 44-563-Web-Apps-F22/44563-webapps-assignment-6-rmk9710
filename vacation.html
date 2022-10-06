@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <title>vacation-checkboxes</title>
+ <header>Reece Kramer Selects a Header</header>
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <input type="radio" id="checkbox" name="AirCheck" value="true"   
+          checked >
+        <label for="checkbox">Traveled by Air</label></br>
+      
+        <input type="radio" id="checkbox" name="DomesticCheck" 
+           value="true">
+        <label for="checkbox">Domestic</label></br>
+      
+        <input type="radio" id="checkbox" name="ResortCheck"   
+           value="false">
+        <label for="checkbox">Resort</label></br>
+
+    <input type="button" onclick="selectVacation()" value="Select a Vacation">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+var myVacation = ""
+function selectVacation(){
+    myVacation = ""
+}
+</script>
+
+<form>
+    <label for="form1_city">Enter a City </label>
+    <input type ="text" id="form1_city" name="form1_City" value="city"> <br>
+
+    <label for="form1_price">Enter Price </label>
+    <input type ="text" id="form1_price" name="form1_price"> <br>
+
+    <input type="button" onclick="updateVacation()" value="Update the Vacation">
+</form>
+<script> 
+function updateVacation(){
+    City = document.getElementById("form1_city").value
+    Price = document.getElementById("form1_price").value
+}
+</body>
+</html>

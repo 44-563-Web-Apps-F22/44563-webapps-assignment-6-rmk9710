@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+ <title>discountpage</title>
+ <header>Reece Kramer Computes Discounts</header>
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_base">Enter Base Amount </label>
+    <input type ="number" id="form1_base" name="form1_base" value=20> <br>
+
+    <label for="form1_percent">Enter the discount percentage</label>
+    <input type ="number" id="form1_percent" name="form1_percent" value="10" > <br>
+
+    <input type="button" onclick="discount()" value="Apply Discount">
+</form>
+
+
+<p id="result">This text will be replaced</p>
+
+<script> 
+
+function discount (){
+    console.log("Getting form values")
+    price = document.getElementById("form1_base").value
+    percentage = document.getElementById("form1_percent").value
+    confirmed = confirm("Are these the values? "+price+" and "+percentage)
+    var result = ""
+    var multPly = 1
+    while(multPly >= 5){
+        price = price * multPly
+        val = price / percentage
+        result.concat(val)
+        multPly += 1
+    }
+}
+</script>
+<form>
+    <input type="radio" id="multBTN" name="multBTN" value="times"   
+      onclick="chooseOp()">
+    <label for="rg1_red">*</label></br>
+  
+    <input type="radio" id="divBTN" name="divBTN" 
+       value="divide" onclick="chooseOp()">
+    <label for="rg1_blue">/</label></br>
+  
+    <input type="radio" id="expBTN" name="expBTN"   
+       value="exponent" onclick="chooseOp()">
+    <label for="rg1_green">**</label></br>
+
+    <input type="button" onclick="resolveRadio()" value="Get values from radio group">
+  </form>
+  <script>
+    function chooseOp(){
+    console.log("Getting form values")
+    price = document.getElementById("form1_base").value
+    percentage = document.getElementById("form1_percent").value
+    if(value = times){
+        return price * percentage
+    }
+    else if(value = division){
+        retunr price / percentage
+    }
+    else{
+        return price ** percentage
+    }
+
+}
+  </script>
+</body>
+</html> 
